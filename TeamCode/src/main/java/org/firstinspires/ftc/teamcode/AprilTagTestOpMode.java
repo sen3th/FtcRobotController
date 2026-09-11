@@ -4,10 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
+
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
+
 import java.util.List;
 
 @TeleOp(name = "Auto-Calibrated AprilTag Follower", group = "Concept")
@@ -19,8 +21,7 @@ public class AprilTagTestOpMode extends LinearOpMode {
 
     // Self-calculated wheel trim multipliers (Default 1.0 = 100%)
     private double trimLF = 1.0, trimRF = 1.0, trimLB = 1.0, trimRB = 1.0;
-
-    private static final int DESIRED_TAG_ID = 583;
+    private static final List<Integer> TAG_IDs = List.of(583,584);
     private static final double DESIRED_DISTANCE = 12.0;
 
     private static final double SPEED_GAIN  = 0.08; //0.02
@@ -64,7 +65,7 @@ public class AprilTagTestOpMode extends LinearOpMode {
 
             List<AprilTagDetection> currentDetections = aprilTag.getDetections();
             for (AprilTagDetection tag : currentDetections) {
-                if (tag.metadata != null && tag.id == DESIRED_TAG_ID) {
+                if (tag.metadata != null && TAG_IDs.contains(tag.id)) {
                     targetFound = true;
                     double rangeError = tag.ftcPose.range - DESIRED_DISTANCE;
                     double bearingError = tag.ftcPose.bearing;
