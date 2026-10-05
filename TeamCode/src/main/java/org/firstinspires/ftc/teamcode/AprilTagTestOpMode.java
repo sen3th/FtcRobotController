@@ -21,10 +21,10 @@ public class AprilTagTestOpMode extends LinearOpMode {
 
     // Self-calculated wheel trim multipliers (Default 1.0 = 100%)
     private double trimLF = 1.0, trimRF = 1.0, trimLB = 1.0, trimRB = 1.0;
-    private static final List<Integer> TAG_IDs = List.of(583,584);
+    private static final List<Integer> TAG_IDs = List.of(30,31,32,33);
     private static final double DESIRED_DISTANCE = 12.0;
 
-    private static final double SPEED_GAIN  = 0.08; //0.02
+    private static final double SPEED_GAIN  = 0.1; //0.02
     private static final double STRAFE_GAIN = 0.015;
     private static final double TURN_GAIN   = 0.01;
 

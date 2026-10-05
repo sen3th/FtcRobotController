@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp(name ="MotorController", group = "TeleOp")
 public class MotorController extends OpMode {
@@ -11,7 +10,7 @@ public class MotorController extends OpMode {
     DcMotor backLeftMotor;
     DcMotor backRightMotor;
     DcMotor frontLeftMotor;
-    DcMotor frontRightMotor;
+    DcMotor frontRightMotor; // can you get the car for him as a reference. the robot
 
     @Override
     public void init() {
