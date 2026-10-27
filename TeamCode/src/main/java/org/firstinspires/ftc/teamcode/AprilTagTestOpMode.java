@@ -105,7 +105,7 @@ public class AprilTagTestOpMode extends LinearOpMode {
         double speedLB = measureMotorVelocity(leftBackDrive, testPower, testDurationMs);
         double speedRB = measureMotorVelocity(rightBackDrive, testPower, testDurationMs);
 
-        // Identify the slowest wheel velocity as our benchmark
+        // Identify the  slowest wheel velocity as our benchmark
         double minSpeed = Math.min(Math.min(speedLF, speedRF), Math.min(speedLB, speedRB));
 
         // Calculate trim factors (Slowest Wheel / Current Wheel)
